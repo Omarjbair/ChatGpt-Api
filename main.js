@@ -12,14 +12,14 @@ function sendToChatGPT(){
     let value = document.getElementById("Text").value;
 
     let body = {
-    model: "text-davinci-003",
+    model: "gpt-3.5-turbo",
     prompt: value,
-    max_tokens: 200,
+    max_tokens: 50,
     temperature: 0.7,
     };
     let headers = {
     Authorization:
-        "Bearer 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",
+        "Bearer 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",
     };
     axios
     .post("https://api.openai.com/v1/completions", body, {
