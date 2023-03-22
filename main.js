@@ -12,23 +12,23 @@ function sendToChatGPT(){
     let value = document.getElementById("Text").value;
 
     let body = {
-    model: "gpt-3.5-turbo",
-    prompt: value,
-    max_tokens: 50,
-    temperature: 0.7,
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: value }],
     };
+
     let headers = {
-    Authorization:
-        "Bearer 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",
+        Authorization: "Bearer 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",
     };
     axios
-    .post("https://api.openai.com/v1/completions", body, {
+    .post("https://api.openai.com/v1/chat/completions", body, {
     headers: headers,
     })
+
     .then((response) => {
-        let reply = response.data.choices[0].text;
+        let reply = info.data.choices[0].message.content;
         document.getElementById("reply").textContent = reply;
     })
+
     .catch((error) => {
         console.log(error);
     });
