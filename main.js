@@ -19,7 +19,7 @@ function sendToChatGPT(){
     };
     let headers = {
     Authorization:
-        "Bearer API_KEY_HERE",
+        "Bearer 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",
     };
     axios
     .post("https://api.openai.com/v1/completions", body, {
